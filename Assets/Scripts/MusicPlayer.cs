@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MusicPlayer : MonoBehaviour {
 	static MusicPlayer instance = null;
 
@@ -9,7 +10,8 @@ public class MusicPlayer : MonoBehaviour {
 	void Start () {
 		if (instance != null) {
 			Destroy (gameObject);
-		} else {
+		} 
+		else {
 			instance = this;
 			GameObject.DontDestroyOnLoad (gameObject);
 		}
