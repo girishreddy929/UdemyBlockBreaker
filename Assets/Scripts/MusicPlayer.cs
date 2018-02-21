@@ -8,11 +8,6 @@ public class MusicPlayer : MonoBehaviour {
 
 	void Awake(){
 		Debug.Log ("Music Player Awake" + GetInstanceID ());
-	}
-
-	// Use this for initialization
-	void Start () {
-		Debug.Log ("Music Player Start" + GetInstanceID ());
 		if (instance != null) {
 			Destroy (gameObject);
 		} 
@@ -21,6 +16,7 @@ public class MusicPlayer : MonoBehaviour {
 			GameObject.DontDestroyOnLoad (gameObject);
 		}
 	}
+		
 	
 	// Update is called once per frame
 	void Update () {
