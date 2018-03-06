@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class LooseCollider : MonoBehaviour {
 
-	public LevelManager levelmanager;
+	private LevelManager levelmanager;
 	void OnTriggerEnter2D(Collider2D trigger){
-		print ("Trigger");
-
+		levelmanager = GameObject.FindObjectOfType<LevelManager> ();
+		levelmanager.LoadLevel ("Lose");
 	}
 
 	void OnCollisionEnter2D(Collision2D collision){
