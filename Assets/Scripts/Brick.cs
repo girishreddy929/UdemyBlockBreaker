@@ -7,6 +7,7 @@ public class Brick : MonoBehaviour {
 
 	public int Maxhits;
 	private int TimesHit;
+	private LevelManager levelmanager;
 	// Use this for initialization
 	void Start () {
 		TimesHit = 0;
@@ -18,6 +19,10 @@ public class Brick : MonoBehaviour {
 	}
 	void OnCollisionEnter2D(Collision2D col){
 		TimesHit++;
-		print (TimesHit);
+		SimulateWin();
+	}
+
+	void SimulateWin(){
+		LevelManager.LoadNextLevel ();
 	}
 }
