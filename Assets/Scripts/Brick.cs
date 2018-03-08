@@ -19,10 +19,12 @@ public class Brick : MonoBehaviour {
 	}
 	void OnCollisionEnter2D(Collision2D col){
 		TimesHit++;
-		SimulateWin();
+		if (Maxhits >= TimesHit) {
+			Destroy (gameObject);
+		}
 	}
 
 	void SimulateWin(){
-		LevelManager.LoadNextLevel ();
+		levelmanager.LoadNextLevel();
 	}
 }
